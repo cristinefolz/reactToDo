@@ -39,7 +39,7 @@ router.get('/', function(req, res){
 });
 
 // all of our routes will be prefixed with /api
-app.use('/api', blogRouter);
+app.use('/api', toDoRouter);
 
 app.listen(port); // starts the server
 console.log('magic happens on port '+ port);  // test the server
