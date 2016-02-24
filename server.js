@@ -15,11 +15,12 @@ app.use(bodyParser.json());
 
 app.use(express.static('public'));  
 
-app.set('view engine', 'ejs'); 
+app.set('view engine', 'ejs');
+app.use(express.static('public')); // allows us to create a public folder and have static js, css files
 
 //to test the app.set function:
 app.get('/', function(req, res){
-	res.render('todo', {title: "viewing the magic"});
+	res.render('index', {title: "viewing the magic"});
 });
 
 

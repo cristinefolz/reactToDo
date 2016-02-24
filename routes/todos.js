@@ -2,13 +2,13 @@ var express = require('express');
 var router = express.Router();  // get an instance of router
 var ToDo = require('../models/todo');
 
-router.route('/todo')  
+router.route('/todos')  
 	.post(function(req, res){
 
 		var todo = new ToDo();
 
 		todo.name = req.body.name; 
-		todo.due_date = req.body.due_date;
+		todo.dueDate = req.body.dueDate;
 		todo.description = req.body.description;
 
 		todo.save(function(err, todo){
@@ -30,7 +30,7 @@ router.route('/todo')
 	  	})
   	});
 
-router.route('/todo/:todo_id') 
+router.route('/todos/:todo_id') 
     .get(function(req, res){
  	    ToDo.findById(req.params.todo_id, function(err, todo){  //req.params because the bear_id is coming in from the URL; findById comes with Mongoose
 			if(err){
@@ -48,8 +48,8 @@ router.route('/todo/:todo_id')
 	 	 	} else {
 
 	 	 		todo.name = req.body.name ? req.body.name : todo.name;  //ternary expression (always returns a value)
-	 	 		todo.due_date = req.body.due_date ? req.body.due_date : todo.due_date;
-	 	 		todo.description = req.body.description ? req.body.description : bear.description;
+	 	 		todo.dueDate = req.body.dueDate ? req.body.dueDate : todo.dueDate;
+	 	 		todo.description = req.body.description ? req.body.description : todo.description;
 
 	 	 		todo.save(function(err, updateToDo){
 	 	 			if(err){

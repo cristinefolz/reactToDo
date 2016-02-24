@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;  // constructor function
 
 var ToDoSchema = new Schema({
 	name: String,
-	due_date: String,
+	dueDate: Date,
 	description: String,
 });
 
