@@ -19,7 +19,7 @@ app.set('view engine', 'ejs');
 
 //to test the app.set function:
 app.get('/', function(req, res){
-	res.render('index', {title: "viewing the magic"});
+	res.render('todo', {title: "viewing the magic"});
 });
 
 
